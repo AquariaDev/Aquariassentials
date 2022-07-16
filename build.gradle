@@ -1,19 +1,33 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    id 'idea'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'fr.viazel.aquaria'
+version 'BETA-0.1'
+
+archivesBaseName = 'Aquariassentials'
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    mavenLocal()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
-
-test {
-    useJUnitPlatform()
+    implementation group: 'org.spigotmc', name: 'spigot', version: '1.8.8-R0.1-SNAPSHOT', changing: true
 }

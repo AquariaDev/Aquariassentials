@@ -1,0 +1,11 @@
+name: Aquariassentials
+main: fr.viazel.aquaria.Main
+version: 1.0
+description: Askip c'est le plugin d'un serveur pas ouf
+api-version: 1.8
+authors:
+  - Viazel
+  - Layttos
+commands:
+  vanish:
+    description: POUF ! T'es invisible
