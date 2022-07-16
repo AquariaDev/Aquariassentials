@@ -19,6 +19,7 @@ public class InvseeCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        // Vérifie si un joueur n'a pas été ajouté
         if(args.length == 0) {
             p.sendMessage("§c» Vous devez rajoutez le pseudo du joueur afin d'inspecter son inventaire");
             return false;
@@ -26,11 +27,13 @@ public class InvseeCommand implements CommandExecutor {
 
         Player target = Bukkit.getPlayer(args[0]);
 
+        // Si le player n'existe pas, alors on envoie un message d'erreur
         if(target == null) {
             p.sendMessage("§c» Le joueur §b" + args[0] + " §cn'existe pas !");
             return false;
         }
 
+        // Copie l'inv du target et l'ouvre au player
         Inventory inv = target.getInventory();
 
         p.openInventory(inv);

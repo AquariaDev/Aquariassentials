@@ -19,6 +19,7 @@ public class VanishCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        // Vérifie si le player est vanish ou non, et effectue les fonctions appropriées
         if(ENV.getVanishedPlayer().contains(p)) {
             ENV.getVanishedPlayer().remove(p);
             putThePlayerUnvanished(p);
@@ -32,12 +33,14 @@ public class VanishCommand implements CommandExecutor {
         return false;
     }
 
+    // Vanish le joueur
     public static void putThePlayerVanished(Player p) {
         for (Player pls : Bukkit.getOnlinePlayers()) {
             pls.hidePlayer(p);
         }
     }
 
+    // UnVanish le joueur
     public static void putThePlayerUnvanished(Player p) {
         for (Player pls : Bukkit.getOnlinePlayers()) {
             pls.showPlayer(p);

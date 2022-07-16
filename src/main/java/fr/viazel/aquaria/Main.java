@@ -13,6 +13,11 @@ public class Main extends JavaPlugin {
 
     private ENV env;
 
+
+    /*
+        Ce enable permet d'instancier env, et donc de préparer les variables d'environnement :)
+        ainsi que les commandes et les listeners tmtc
+     */
     @Override
     public void onEnable() {
         env = new ENV();
@@ -23,6 +28,9 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new VanishPlayerJoin(), this);
     }
 
+    /*
+        Ce disable est la pour prévenir les gens vanished qu'ils ne sont plus vanish
+     */
     @Override
     public void onDisable() {
         getLogger().info("Plugin unloaded");
