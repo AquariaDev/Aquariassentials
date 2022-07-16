@@ -1,7 +1,6 @@
 package fr.viazel.aquaria;
 
-import fr.viazel.aquaria.commands.InvseeCommand;
-import fr.viazel.aquaria.commands.VanishCommand;
+import fr.viazel.aquaria.commands.*;
 import fr.viazel.aquaria.listeners.VanishPlayerJoin;
 import fr.viazel.aquaria.utils.ENV;
 import org.bukkit.Bukkit;
@@ -25,6 +24,9 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         getCommand("vanish").setExecutor(new VanishCommand());
         getCommand("invsee").setExecutor(new InvseeCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
+        getCommand("aquahelp").setExecutor(new AquaHelp());
+        getCommand("nick").setExecutor(new NickCommand());
         pm.registerEvents(new VanishPlayerJoin(), this);
     }
 

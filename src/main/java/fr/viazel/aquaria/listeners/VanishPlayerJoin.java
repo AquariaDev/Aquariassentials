@@ -1,6 +1,8 @@
 package fr.viazel.aquaria.listeners;
 
 import fr.viazel.aquaria.utils.ENV;
+import net.minecraft.server.v1_8_R3.PlayerConnection;
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +23,12 @@ public class VanishPlayerJoin implements Listener {
             p.hidePlayer(pls);
 
         }
+    }
+
+    @EventHandler
+    public void Playera(PlayerConnection e) {
+        CraftPlayer p = e.getPlayer();
+
     }
 
 }

@@ -19,6 +19,11 @@ public class VanishCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        if(!p.hasPermission("aqua.vanish")) {
+            p.sendMessage("§c» Vous n'avez pas la permission !");
+            return false;
+        }
+
         // Vérifie si le player est vanish ou non, et effectue les fonctions appropriées
         if(ENV.getVanishedPlayer().contains(p)) {
             ENV.getVanishedPlayer().remove(p);

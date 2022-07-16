@@ -19,6 +19,11 @@ public class InvseeCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        if(!p.hasPermission("aqua.invsee")) {
+            p.sendMessage("§c» Vous n'avez pas la permission !");
+            return false;
+        }
+
         // Vérifie si un joueur n'a pas été ajouté
         if(args.length == 0) {
             p.sendMessage("§c» Vous devez rajoutez le pseudo du joueur afin d'inspecter son inventaire");

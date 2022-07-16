@@ -11,3 +11,9 @@ commands:
     description: POUF ! T'es invisible
   invsee:
     description: HOP ! Tu vois l'inventaire des autres
+  feed:
+    description: HO ! Tu as de la nourriture
+  nick:
+    description: HUSH ! Tu peux changer de pseudo
+  aquahelp:
+    description: PATAPLOUF ! Les aides...
