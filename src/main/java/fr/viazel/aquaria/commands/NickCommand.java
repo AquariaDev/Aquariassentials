@@ -11,7 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-import dev.
 
 import java.lang.reflect.Field;
 import java.util.Random;
@@ -123,20 +122,16 @@ public class NickCommand implements CommandExecutor {
         PlayerConnection connection = ((CraftPlayer) p).getHandle().playerConnection;
 
         connection.sendPacket(new PacketPlayOutPlayerInfo(
-                PacketPlayOutPlayerInfo.EnumPlayerInfoAction.REMOVE_PLAYER, ((CraftPlayer) p).getHandle() ));
+                PacketPlayOutPlayerInfo.EnumPlayerInfoAction.REMOVE_PLAYER, ((CraftPlayer) p).getHandle()));
 
         profile.getProperties().removeAll("textures");
-        profile.getProperties().put("textures", getSkin(p.getName()));
+//        profile.getProperties().put("textures", getSkin(p.getName()));
 
         connection.sendPacket(new PacketPlayOutPlayerInfo(
-                PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, ((CraftPlayer) p).getHandle() ));
+                PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, ((CraftPlayer) p).getHandle()));
 
         p.setHealth(0);
         p.spigot().respawn();
-    }
-
-    private static Property getSkin(String name) {
-        ServerRe
     }
 
 }

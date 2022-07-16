@@ -30,5 +30,4 @@ repositories {
 
 dependencies {
     implementation group: 'org.spigotmc', name: 'spigot', version: '1.8.8-R0.1-SNAPSHOT', changing: true
-    implementation "dev.jaqobb:namemcapi:2.0.7"
 }

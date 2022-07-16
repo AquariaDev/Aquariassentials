@@ -27,6 +27,7 @@ public class Main extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("aquahelp").setExecutor(new AquaHelp());
         getCommand("nick").setExecutor(new NickCommand());
+        getCommand("tnt").setExecutor(new TntCommand());
         pm.registerEvents(new VanishPlayerJoin(), this);
     }
 

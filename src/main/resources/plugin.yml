@@ -17,3 +17,5 @@ commands:
     description: HUSH ! Tu peux changer de pseudo
   aquahelp:
     description: PATAPLOUF ! Les aides...
+  tnt:
+    description: BOOOOOOOM !
