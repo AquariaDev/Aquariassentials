@@ -8,10 +8,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class VanishPlayerJoin implements Listener {
 
-    public VanishPlayerJoin() {
-
-    }
-
     @EventHandler
     public void playerJoin(PlayerJoinEvent e){
 

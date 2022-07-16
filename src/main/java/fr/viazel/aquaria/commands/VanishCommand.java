@@ -13,7 +13,7 @@ public class VanishCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if(!(sender instanceof Player)) {
-            Bukkit.getLogger().severe("Vous devez être un joueur pour éxécuter cette commande");
+            Bukkit.getLogger().severe("§aVous devez être un joueur pour éxécuter cette commande");
             return false;
         }
 
@@ -21,11 +21,11 @@ public class VanishCommand implements CommandExecutor {
 
         if(ENV.getVanishedPlayer().contains(p)) {
             ENV.getVanishedPlayer().remove(p);
-            putThePlayerVanished(p);
+            putThePlayerUnvanished(p);
             p.sendMessage("§c» Vous n'êtes plus en vanish !");
         }else {
             ENV.getVanishedPlayer().add(p);
-            putThePlayerUnvanished(p);
+            putThePlayerVanished(p);
             p.sendMessage("§a» Vous êtes désormais en vanish !");
         }
 

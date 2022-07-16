@@ -9,3 +9,5 @@ authors:
 commands:
   vanish:
     description: POUF ! T'es invisible
+  invsee:
+    description: HOP ! Tu vois l'inventaire des autres
